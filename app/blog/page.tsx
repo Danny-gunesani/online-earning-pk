@@ -1,4 +1,4 @@
-import { generateMeta } from '@/app/lib/metadata.ts'
+import { generateMeta } from '@/app/lib/metadata'
 
 export const metadata = generateMeta({
   title: 'Blog — Earn Online in Pakistan Guides 2026',
