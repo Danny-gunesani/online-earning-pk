@@ -1,4 +1,4 @@
-import { generateMeta } from '@/app/lib/metadata.ts'
+import { generateMeta } from '@/app/lib/metadata'
 import { FAQSchema } from '@/app/components/SchemaOrg'
 
 export const metadata = generateMeta({
