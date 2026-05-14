@@ -12,21 +12,67 @@ export const metadata: Metadata = {
     template: '%s | Earn Online Pakistan',
   },
   description:
-    'Learn how to earn money online in Pakistan. Complete guide to Freelancing, Fiverr, Upwork, and payment methods.',
+    'Learn how to earn money online in Pakistan 2026. Complete guide to Freelancing, Fiverr, Upwork, and payment methods for beginners.',
+
   metadataBase: new URL('https://earnonlinepk.com'),
+
   keywords: [
     'earn online pakistan',
     'online earning pakistan 2026',
     'fiverr pakistan',
     'upwork pakistan',
     'freelancing pakistan',
+    'how to earn online in pakistan',
+    'pakistan freelancer',
   ],
-  authors: [{ name: 'Earn Online PK' }],
+
+  authors: [{ name: 'Earn Online PK', url: 'https://earnonlinepk.com' }],
   creator: 'Earn Online PK',
+  publisher: 'Earn Online PK',
+
+  alternates: {
+    canonical: 'https://earnonlinepk.com',
+  },
+
+  openGraph: {
+    type: 'website',
+    locale: 'en_PK',
+    url: 'https://earnonlinepk.com',
+    siteName: 'Earn Online Pakistan',
+    title: 'Earn Online Pakistan 2026 — Complete Guide',
+    description:
+      'Complete guide to earning money online in Pakistan. Freelancing, Fiverr, Upwork, and more.',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Earn Online Pakistan — Complete Guide 2026',
+      },
+    ],
+  },
+
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Earn Online Pakistan 2026 — Complete Guide',
+    description: 'Complete guide to earning money online in Pakistan.',
+    images: ['/og-image.jpg'],
+  },
+
   robots: {
     index: true,
     follow: true,
-    googleBot: { index: true, follow: true },
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
+  },
+
+  verification: {
+    google: 'YOUR_VERIFICATION_CODE_HERE',
   },
 }
 
@@ -36,8 +82,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en-PK" suppressHydrationWarning>
+      <body className={inter.className} suppressHydrationWarning>
         <Navbar />
         {children}
         <Footer />

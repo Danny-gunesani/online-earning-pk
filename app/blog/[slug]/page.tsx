@@ -1,5 +1,5 @@
-import { generateMeta } from '@/app/lib/metadata.ts'
-import { ArticleSchema, FAQSchema } from '@/app/components/SchemaOrg.tsx'
+import { generateMeta } from '@/app/lib/metadata'
+import { ArticleSchema, FAQSchema } from '@/app/components/SchemaOrg'
 
 const posts: Record<string, any> = {
   'payoneer-jazzcash-guide': {
