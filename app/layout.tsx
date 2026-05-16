@@ -7,6 +7,7 @@ import Footer from '@/app/components/Footer'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
+
   title: {
     default: 'Earn Online Pakistan 2026 — Complete Guide',
     template: '%s | Earn Online Pakistan',
@@ -72,7 +73,7 @@ export const metadata: Metadata = {
   },
 
   verification: {
-    google: 'YOUR_VERIFICATION_CODE_HERE',
+    google: '<meta name="google-site-verification" content="-O8q-Z3gADMaXJOYRgMz6eKweZGYu6fXU7_5ktxMAnY" />',
   },
 }
 
