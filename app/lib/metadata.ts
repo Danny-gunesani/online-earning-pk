@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 
-const BASE_URL = 'https://earnonlinepk.com'
+const BASE_URL = 'https://online-earning-pk-xtsm.vercel.app'
 const SITE_NAME = 'Earn Online Pakistan'
 
 export function generateMeta({

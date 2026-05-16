@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_PK',
-    url: 'https://earnonlinepk.com',
+    url: ('https://online-earning-pk-xtsm.vercel.app'),
     siteName: 'Earn Online Pakistan',
     title: 'Earn Online Pakistan 2026 — Complete Guide',
     description:
