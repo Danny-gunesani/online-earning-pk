@@ -5,35 +5,74 @@ const posts: Record<string, any> = {
   'payoneer-jazzcash-guide': {
     title: 'How to Transfer Payoneer Money to JazzCash in Pakistan 2026',
     description:
-      'Complete step by step guide to link your Payoneer account with JazzCash and withdraw money easily.',
+      'Complete step by step guide to link your Payoneer account with JazzCash and withdraw money easily in Pakistan.',
     date: 'April 1, 2026',
     category: 'Payments',
-    readTime: '5 min read',
+    readTime: '8 min read',
     content: `
-      Payoneer is the most popular payment method for Pakistani freelancers.
-      In this guide you will learn how to link Payoneer with JazzCash step by step.
+      If you are a freelancer in Pakistan, Payoneer is probably your main source of receiving international payments. But the real question is how do you get that money into your hands? The easiest way is to transfer it directly to JazzCash.
 
-      Step 1: Login to your Payoneer account
-      Step 2: Go to Withdraw > To Bank Account
-      Step 3: Add JazzCash as your bank
-      Step 4: Enter your JazzCash IBAN number
-      Step 5: Submit and wait 1-3 business days
+      What is Payoneer?
+      Payoneer is an international payment platform used by freelancers worldwide. It is supported by Fiverr, Upwork, Amazon, and many other platforms. Pakistani freelancers use Payoneer to receive dollars from international clients.
+
+      What is JazzCash?
+      JazzCash is Pakistan's most popular mobile wallet. You can use it to send money, pay bills, and receive international transfers. It is owned by Jazz and works on any mobile number.
+
+      Requirements Before You Start
+      Before transferring money from Payoneer to JazzCash, make sure you have these things ready. First you need a verified Payoneer account with at least $20 balance. Second you need an active JazzCash account with your CNIC verified. Third you need your JazzCash IBAN number which starts with PK.
+
+      How to Find Your JazzCash IBAN
+      Open your JazzCash app on your mobile. Go to My Account section. Tap on Bank Account Details. You will see your IBAN number starting with PK36. Copy this number because you will need it in the next step.
+
+      Step 1 — Login to Payoneer
+      Go to payoneer.com and login to your account with your email and password.
+
+      Step 2 — Go to Withdraw Section
+      On your Payoneer dashboard, click on the Withdraw button at the top. Then select To Bank Account from the dropdown menu.
+
+      Step 3 — Add JazzCash as Your Bank
+      If you have not added JazzCash before, click on Add Bank Account. Select Pakistan as your country. Enter your full name as it appears on your CNIC. Enter your JazzCash IBAN number carefully.
+
+      Step 4 — Enter Withdrawal Amount
+      Enter the amount you want to withdraw. The minimum withdrawal amount is $20. Payoneer charges a small fee of around $1.50 to $3 per withdrawal.
+
+      Step 5 — Confirm and Submit
+      Review all the details carefully. Click on Withdraw Now to submit your request. You will receive a confirmation email from Payoneer.
+
+      How Long Does It Take?
+      After submitting your withdrawal request, the money usually arrives in your JazzCash account within 1 to 3 business days. Sometimes it can be faster depending on the day and time of your request.
+
+      Payoneer to JazzCash Fees
+      Payoneer charges a withdrawal fee of approximately 1.5 to 2 percent of the total amount. For example if you withdraw $100, you will receive around $98 after fees.
+
+      Tips to Save Money on Withdrawals
+      Always withdraw larger amounts to save on fees. Instead of withdrawing $20 multiple times, wait until you have $100 or more. This way you pay less fees overall.
     `,
     faqs: [
       {
-        question: 'Does Payoneer work with JazzCash?',
+        question: 'Does Payoneer work with JazzCash in Pakistan?',
         answer:
-          'Yes, Payoneer supports JazzCash withdrawals in Pakistan directly to your mobile wallet.',
+          'Yes, Payoneer supports direct withdrawal to JazzCash in Pakistan. You need your JazzCash IBAN number to add it as a bank account in Payoneer.',
       },
       {
         question: 'How long does Payoneer to JazzCash transfer take?',
         answer:
-          'It usually takes 1 to 3 business days for the money to arrive in your JazzCash account.',
+          'It usually takes 1 to 3 business days for the money to arrive in your JazzCash account after submitting the withdrawal request.',
       },
       {
         question: 'What is the minimum withdrawal from Payoneer to JazzCash?',
         answer:
-          'The minimum withdrawal amount is $20 or equivalent in PKR.',
+          'The minimum withdrawal amount from Payoneer to JazzCash is $20 or equivalent in PKR.',
+      },
+      {
+        question: 'What are Payoneer withdrawal fees in Pakistan?',
+        answer:
+          'Payoneer charges approximately 1.5 to 2 percent fee on each withdrawal. For $100 withdrawal you receive around $98 after fees.',
+      },
+      {
+        question: 'Can I withdraw Payoneer to Easypaisa instead of JazzCash?',
+        answer:
+          'Yes, you can also withdraw Payoneer money to Easypaisa using the same process by adding your Easypaisa IBAN number.',
       },
     ],
   },
@@ -150,20 +189,26 @@ const posts: Record<string, any> = {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }) {
-  const post = posts[params.slug]
+  const { slug } = await params
+  const post = posts[slug]
   if (!post) return {}
 
   return generateMeta({
     title: post.title,
     description: post.description,
-    slug: `blog/${params.slug}`,
+    slug: `blog/${slug}`,
   })
 }
 
-export default function BlogPost({ params }: { params: { slug: string } }) {
-  const post = posts[params.slug]
+export default async function BlogPost({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}) {
+  const { slug } = await params
+  const post = posts[slug]
 
   if (!post) {
     return (
@@ -183,18 +228,16 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
         description={post.description}
         datePublished={post.date}
         dateModified={post.date}
-        slug={params.slug}
+        slug={slug}
       />
       <FAQSchema faqs={post.faqs} />
 
       <main className="max-w-4xl mx-auto px-4 py-10">
 
-        {/* Back Button */}
         <a href="/blog" className="text-green-600 text-sm mb-6 block">
           ← Back to Blog
         </a>
 
-        {/* Header */}
         <div className="mb-8">
           <div className="flex items-center gap-3 mb-4">
             <span className="text-xs font-semibold bg-green-100 text-green-700 px-3 py-1 rounded-full">
@@ -209,7 +252,6 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
           <p className="text-xl text-gray-600">{post.description}</p>
         </div>
 
-        {/* Content */}
         <div className="prose prose-lg max-w-none mb-12">
           {post.content.split('\n').filter(Boolean).map((line: string, i: number) => (
             <p key={i} className="text-gray-700 mb-4">
@@ -218,7 +260,6 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
           ))}
         </div>
 
-        {/* FAQ Section */}
         <div className="border-t pt-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">
             Frequently Asked Questions
