@@ -10,13 +10,13 @@ const blogPosts = [
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
     {
-      url: 'https://earnonlinepk.com',
+      url: 'https://online-earning-pk-xtsm.vercel.app/',
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 1.0,
     },
     {
-      url: 'https://earnonlinepk.com/blog',
+      url: 'https://online-earning-pk-xtsm.vercel.app/blog',
       lastModified: new Date(),
       changeFrequency: 'daily' as const,
       priority: 0.9,
@@ -24,7 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ]
 
   const blogPages = blogPosts.map((post) => ({
-    url: `https://earnonlinepk.com/blog/${post.slug}`,
+    url: `https://online-earning-pk-xtsm.vercel.app/blog/${post.slug}`,
     lastModified: new Date(post.date),
     changeFrequency: 'monthly' as const,
     priority: 0.8,
