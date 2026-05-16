@@ -19,18 +19,18 @@ export function ArticleSchema({
     description,
     datePublished,
     dateModified,
-    url: `https://earnonlinepk.com/blog/${slug}`,
+    url: `https://online-earning-pk-xtsm.vercel.app/blog/${slug}`,
     author: {
       '@type': 'Organization',
       name: 'Earn Online Pakistan',
-      url: 'https://earnonlinepk.com',
+      url: 'https://online-earning-pk-xtsm.vercel.app',
     },
     publisher: {
       '@type': 'Organization',
       name: 'Earn Online Pakistan',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://earnonlinepk.com/logo.png',
+        url: 'https://online-earning-pk-xtsm.vercel.app/logo.png',
       },
     },
   }

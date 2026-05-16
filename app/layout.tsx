@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
   metadataBase: new URL('https://online-earning-pk-xtsm.vercel.app'),
 
-  keywords: [
+  keywords: [ 
     'earn online pakistan',
     'online earning pakistan 2026',
     'fiverr pakistan',
