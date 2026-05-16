@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   description:
     'Learn how to earn money online in Pakistan 2026. Complete guide to Freelancing, Fiverr, Upwork, and payment methods for beginners.',
 
-  metadataBase: new URL('https://earnonlinepk.com'),
+  metadataBase: new URL('https://online-earning-pk-xtsm.vercel.app'),
 
   keywords: [
     'earn online pakistan',
@@ -27,12 +27,12 @@ export const metadata: Metadata = {
     'pakistan freelancer',
   ],
 
-  authors: [{ name: 'Earn Online PK', url: 'https://earnonlinepk.com' }],
+  authors: [{ name: 'Earn Online PK', url: 'https://online-earning-pk-xtsm.vercel.app' }],
   creator: 'Earn Online PK',
   publisher: 'Earn Online PK',
 
   alternates: {
-    canonical: 'https://earnonlinepk.com',
+    canonical: 'https://online-earning-pk-xtsm.vercel.app',
   },
 
   openGraph: {
